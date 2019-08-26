@@ -48,7 +48,7 @@
 
 # Example problem:
 # Uncomment the line below and run this cell.
-# doing_python_right_now = True
+doing_python_right_now = True
 
 # The lines below will test your answer. If you see an error, then it means that your answer is incorrect or incomplete.
 assert doing_python_right_now == True, "If you see a NameError, it means that the variable is not created and assigned a value. An 'Assertion Error' means that the value of the variable is incorrect." 
@@ -59,6 +59,7 @@ print("Exercise 0 is correct") # This line will print if your solution passes th
 
 # Exercise 1
 # On the line below, create a variable named on_mars_right_now and assign it the boolean value of False
+on_mars_right_now = False
 
 assert on_mars_right_now == False, "If you see a Name Error, be sure to create the variable and assign it a value."
 print("Exercise 1 is correct.")
@@ -69,6 +70,7 @@ print("Exercise 1 is correct.")
 # Exercise 2
 # Create a variable named fruits and assign it a list of fruits containing the following fruit names as strings: 
 # mango, banana, guava, kiwi, and strawberry.
+fruits = ["mango","banana", "guava","kiwi", "strawberry"]
 
 assert fruits == ["mango", "banana", "guava", "kiwi", "strawberry"], "If you see an Assert Error, ensure the variable contains all the strings in the provided order"
 print("Exercise 2 is correct.")
@@ -79,7 +81,7 @@ print("Exercise 2 is correct.")
 # Exercise 3
 # Create a variable named vegetables and assign it a list of fruits containing the following vegetable names as strings: 
 # eggplant, broccoli, carrot, cauliflower, and zucchini
-
+vegetables = ["eggplant", "broccoli","carrot","cauliflower","zucchini"]
 assert vegetables == ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"], "Ensure the variable contains all the strings in the provided order"
 print("Exercise 3 is correct.")
 
@@ -88,7 +90,7 @@ print("Exercise 3 is correct.")
 
 # Exercise 4
 # Create a variable named numbers and assign it a list of numbers, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-
+numbers = [1,2,3,4,5,6,7,8,9,10]
 assert numbers == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "Ensure the variable contains the numbers 1-10 in order."
 print("Exercise 4 is correct.")
 
@@ -97,10 +99,10 @@ print("Exercise 4 is correct.")
 # **Hint** Recommend finding and using built-in Python functionality whenever possible.
 
 
-
 # Exercise 5
 # Given the following assigment of the list of fruits, add "tomato" to the end of the list. 
 fruits = ["mango", "banana", "guava", "kiwi", "strawberry"]
+fruits.append("tomato")
 
 assert fruits == ["mango", "banana", "guava", "kiwi", "strawberry", "tomato"], "Ensure the variable contains all the strings in the right order"
 print("Exercise 5 is correct")
@@ -111,7 +113,7 @@ print("Exercise 5 is correct")
 # Exercise 6
 # Given the following assignment of the vegetables list, add "tomato" to the end of the list.
 vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"]
-
+vegetables.append("tomato")
 
 assert vegetables == ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini", "tomato"], "Ensure the variable contains all the strings in the provided order"
 print("Exercise 6 is correct")
@@ -123,7 +125,7 @@ print("Exercise 6 is correct")
 # Given the list of numbers defined below, reverse the list of numbers that you created above. 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-
+numbers = numbers[::-1]
 assert numbers == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "Assert Error means that the answer is incorrect." 
 print("Exercise 7 is correct.")
 
@@ -132,7 +134,7 @@ print("Exercise 7 is correct.")
 
 # Exercise 8
 # Sort the vegetables in alphabetical order
-
+vegetables.sort()
 assert vegetables == ['broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini']
 print("Exercise 8 is correct.")
 
@@ -141,7 +143,7 @@ print("Exercise 8 is correct.")
 
 # Exercise 9
 # Write the code necessary to sort the fruits in reverse alphabetical order
-
+fruits.sort(reverse=True)
 assert fruits == ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana']
 print("Exercise 9 is correct.")
 
@@ -150,7 +152,7 @@ print("Exercise 9 is correct.")
 
 # Exercise 10
 # Write the code necessary to produce a single list that holds all fruits then all vegetables in the order as they were sorted above.
-
+fruits_and_veggies = fruits + vegetables
 assert fruits_and_veggies == ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini']
 print("Exercise 10 is correct")
 
@@ -205,7 +207,8 @@ print("The plus_two assertions executed appropriately... The second function def
 
 # Exercise 11
 # Write a function definition for a function named add_one that takes in a number and returns that number plus one.
-
+def add_one(num):
+	return num + 1
     
 assert add_one(2) == 3, "Ensure that the function is defined, named properly, and returns the correct value"
 assert add_one(0) == 1, "Zero plus one is one."
@@ -218,6 +221,10 @@ print("Exercise 11 is correct.")
 
 # Exercise 12
 # Write a function definition named is_positive that takes in a number and returns True or False if that number is positive.
+def is_positive(num):
+	if num > 0:
+		return True
+	return False
 
 assert is_positive(positive_odd_number) == True, "Ensure that the function is defined, named properly, and returns the correct value"
 assert is_positive(positive_even_number) == True, "Ensure that the function is defined, named properly, and returns the correct value"
@@ -230,6 +237,10 @@ print("Exercise 12 is correct.")
 
 # Exercise 13
 # Write a function definition named is_negative that takes in a number and returns True or False if that number is negative.
+def is_negative(num):
+	if num < 0:
+		return True
+	return False
 
 assert is_negative(positive_odd_number) == False, "Ensure that the function is defined, named properly, and returns the correct value"
 assert is_negative(positive_even_number) == False, "Ensure that the function is defined, named properly, and returns the correct value"
@@ -242,6 +253,10 @@ print("Exercise 13 is correct.")
 
 # Exercise 14
 # Write a function definition named is_odd that takes in a number and returns True or False if that number is odd.
+def is_odd(num):
+	if num % 2== 0:
+		return False
+	return True
 
 assert is_odd(positive_odd_number) == True, "Ensure that the function is defined, named properly, and returns the correct value"
 assert is_odd(positive_even_number) == False, "Ensure that the function is defined, named properly, and returns the correct value"
@@ -254,7 +269,10 @@ print("Exercise 14 is correct.")
 
 # Exercise 15
 # Write a function definition named is_even that takes in a number and returns True or False if that number is even.
-
+def is_even(num):
+	if num %2 == 0:
+		return True
+	return False
 assert is_even(2) == True, "Ensure that the function is defined, named properly, and returns the correct value"
 assert is_even(positive_odd_number) == False, "Ensure that the function is defined, named properly, and returns the correct value"
 assert is_even(positive_even_number) == True, "Ensure that the function is defined, named properly, and returns the correct value"
@@ -267,6 +285,8 @@ print("Exercise 15 is correct.")
 
 # Exercise 16
 # Write a function definition named identity that takes in any argument and returns that argument's value. Don't overthink this one!
+def identity(value):
+	return value
 
 assert identity(fruits) == fruits, "Ensure that the function is defined, named properly, and returns the correct value"
 assert identity(vegetables) == vegetables, "Ensure that the function is defined, named properly, and returns the correct value"
@@ -281,6 +301,10 @@ print("Exercise 16 is correct.")
 
 # Exercise 17
 # Write a function definition named is_positive_odd that takes in a number and returns True or False if the value is both greater than zero and odd
+def is_positive_odd(num):
+	if num > 0 and not num % 2 == 0:
+		return True
+	return False
 
 assert is_positive_odd(3) == True, "Double check your syntax and logic" 
 assert is_positive_odd(positive_odd_number) == True, "Double check your syntax and logic"
@@ -294,7 +318,10 @@ print("Exercise 17 is correct.")
 
 # Exercise 18
 # Write a function definition named is_positive_even that takes in a number and returns True or False if the value is both greater than zero and even
-
+def is_positive_even(num):
+	if num > 0 and num % 2 == 0:
+		return True
+	return False
 assert is_positive_even(4) == True, "Double check your syntax and logic" 
 assert is_positive_even(positive_odd_number) == False, "Double check your syntax and logic"
 assert is_positive_even(positive_even_number) == True, "Double check your syntax and logic"
@@ -307,6 +334,10 @@ print("Exercise 18 is correct.")
 
 # Exercise 19
 # Write a function definition named is_negative_odd that takes in a number and returns True or False if the value is both less than zero and odd.
+def is_negative_odd(num):
+	if num < 0 and not num % 2 == 0:
+		return True
+	return False
 
 assert is_negative_odd(-3) == True, "Double check your syntax and logic" 
 assert is_negative_odd(positive_odd_number) == False, "Double check your syntax and logic"
@@ -320,6 +351,10 @@ print("Exercise 19 is correct.")
 
 # Exercise 20
 # Write a function definition named is_negative_even that takes in a number and returns True or False if the value is both less than zero and even.
+def is_negative_even(num):
+	if num < 0 and num % 2 == 0:
+		return True
+	return False
 
 assert is_negative_even(-4) == True, "Double check your syntax and logic" 
 assert is_negative_even(positive_odd_number) == False, "Double check your syntax and logic"
@@ -333,6 +368,8 @@ print("Exercise 20 is correct.")
 
 # Exercise 21
 # Write a function definition named half that takes in a number and returns half the provided number.
+def half(num):
+	return num / 2
 
 assert half(4) == 2
 assert half(5) == 2.5
@@ -347,6 +384,8 @@ print("Exercise 21 is correct.")
 
 # Exercise 22
 # Write a function definition named double that takes in a number and returns double the provided number.
+def double(num):
+	return num * 2
 
 assert double(4) == 8
 assert double(5) == 10
@@ -361,6 +400,8 @@ print("Exercise 22 is correct.")
 
 # Exercise 23
 # Write a function definition named triple that takes in a number and returns triple the provided number.
+def triple(num):
+	return num * 3 
 
 assert triple(4) == 12
 assert triple(5) == 15
@@ -375,6 +416,8 @@ print("Exercise 23 is correct.")
 
 # Exercise 24
 # Write a function definition named reverse_sign that takes in a number and returns the provided number but with the sign reversed.
+def reverse_sign(num):
+	return num * -1
 
 assert reverse_sign(4) == -4
 assert reverse_sign(-5) == 5
@@ -389,7 +432,8 @@ print("Exercise 24 is correct.")
 
 # Exercise 25
 # Write a function definition named absolute_value that takes in a number and returns the absolute value of the provided number
-
+def absolute_value(num):
+	return abs(num)
 assert absolute_value(4) == 4
 assert absolute_value(-5) == 5
 assert absolute_value(positive_odd_number) == positive_odd_number
@@ -403,7 +447,10 @@ print("Exercise 25 is correct.")
 
 # Exercise 26
 # Write a function definition named is_multiple_of_three that takes in a number and returns True or False if the number is evenly divisible by 3.
-
+def is_multiple_of_three(num):
+	if num % 3 == 0:
+		return True
+	return False
 assert is_multiple_of_three(3) == True
 assert is_multiple_of_three(15) == True
 assert is_multiple_of_three(9) == True
@@ -416,7 +463,10 @@ print("Exercise 26 is correct.")
 
 # Exercise 27
 # Write a function definition named is_multiple_of_five that takes in a number and returns True or False if the number is evenly divisible by 5.
-
+def is_multiple_of_five(num):
+		if num % 5 == 0:
+			return True
+		return False
 assert is_multiple_of_five(3) == False
 assert is_multiple_of_five(15) == True
 assert is_multiple_of_five(9) == False
@@ -429,6 +479,10 @@ print("Exercise 27 is correct.")
 
 # Exercise 28
 # Write a function definition named is_multiple_of_both_three_and_five that takes in a number and returns True or False if the number is evenly divisible by both 3 and 5.
+def is_multiple_of_both_three_and_five(num):
+	if num % 3 == 0 and num % 5 == 0:
+		return True
+	return False
 
 assert is_multiple_of_both_three_and_five(15) == True
 assert is_multiple_of_both_three_and_five(45) == True
@@ -442,6 +496,8 @@ print("Exercise 28 is correct.")
 
 # Exercise 29
 # Write a function definition named square that takes in a number and returns the number times itself.
+def square(num):
+	return num * num
 
 assert square(3) == 9
 assert square(2) == 4
@@ -454,7 +510,8 @@ print("Exercise 29 is correct.")
 
 # Exercise 30
 # Write a function definition named add that takes in two numbers and returns the sum.
-
+def add(num1, num2):
+	return num1 + num2
 assert add(3, 2) == 5
 assert add(10, -2) == 8
 assert add(5, 7) == 12
@@ -465,7 +522,8 @@ print("Exercise 30 is correct.")
 
 # Exercise 31
 # Write a function definition named cube that takes in a number and returns the number times itself, times itself.
-
+def cube(num):
+	return num * num * num
 assert cube(3) == 27
 assert cube(2) == 8
 assert cube(5) == 125
@@ -477,6 +535,8 @@ print("Exercise 31 is correct.")
 
 # Exercise 32
 # Write a function definition named square_root that takes in a number and returns the square root of the provided number
+def square_root(num):
+	return num * 0.5
 
 assert square_root(4) == 2.0
 assert square_root(64) == 8.0
@@ -488,7 +548,8 @@ print("Exercise 32 is correct.")
 
 # Exercise 33
 # Write a function definition named subtract that takes in two numbers and returns the first minus the second argument.
-
+def subtract(num1,num2):
+	return num1 - num2
 assert subtract(8, 6) == 2
 assert subtract(27, 4) == 23
 assert subtract(12, 2) == 10
