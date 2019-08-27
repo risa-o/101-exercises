@@ -536,7 +536,7 @@ print("Exercise 31 is correct.")
 # Exercise 32
 # Write a function definition named square_root that takes in a number and returns the square root of the provided number
 def square_root(num):
-	return num * 0.5
+	return num ** 0.5
 
 assert square_root(4) == 2.0
 assert square_root(64) == 8.0
@@ -560,6 +560,8 @@ print("Exercise 33 is correct.")
 
 # Exercise 34
 # Write a function definition named multiply that takes in two numbers and returns the first times the second argument.
+def multiply(num1, num2):
+	return num1 * num2
 
 assert multiply(2, 1) == 2
 assert multiply(3, 5) == 15
@@ -571,6 +573,8 @@ print("Exercise 34 is correct.")
 
 # Exercise 35
 # Write a function definition named divide that takes in two numbers and returns the first argument divided by the second argument.
+def divide(num1, num2):
+	return num1 / num2
 
 assert divide(27, 9) == 3
 assert divide(15, 3) == 5
@@ -583,6 +587,8 @@ print("Exercise 35 is correct.")
 
 # Exercise 36
 # Write a function definition named quotient that takes in two numbers and returns only the quotient first argument quotient by the second argument.
+def quotient(num1, num2):
+	return num1 // num2
 
 assert quotient(27, 9) == 3
 assert quotient(5, 2) == 2
@@ -594,7 +600,8 @@ print("Exercise 36 is correct.")
 
 # Exercise 37
 # Write a function definition named remainder that takes in two numbers and returns the remainder of first argument divided by the second argument.
-
+def remainder(num1, num2):
+	return num1 % num2
 assert remainder(3, 3) == 0
 assert remainder(5, 2) == 1
 assert remainder(7, 5) == 2
@@ -605,7 +612,8 @@ print("Exercise 37 is correct.")
 
 # Exercise 38
 # Write a function definition named sum_of_squares that takes in two numbers, squares each number, then returns the sum of both squares.
-
+def sum_of_squares(num1,num2):
+	return num1 * num1 + num2 * num2
 assert sum_of_squares(3, 2) == 13
 assert sum_of_squares(5, 2) == 29
 assert sum_of_squares(2, 4) == 20
@@ -616,7 +624,8 @@ print("Exercise 38 is correct.")
 
 # Exercise 39
 # Write a function definition named times_two_plus_three that takes in a number, multiplies it by two, adds 3 and returns the result.
-
+def times_two_plus_three(num):
+	return num * 2 + 3
 assert times_two_plus_three(0) == 3
 assert times_two_plus_three(1) == 5
 assert times_two_plus_three(2) == 7
@@ -629,7 +638,8 @@ print("Exercise 39 is correct.")
 
 # Exercise 40
 # Write a function definition named area_of_rectangle that takes in two numbers and returns the product.
-
+def area_of_rectangle(n1,n2):
+	return n1 * n2
 assert area_of_rectangle(1, 3) == 3
 assert area_of_rectangle(5, 2) == 10
 assert area_of_rectangle(2, 7) == 14
@@ -642,7 +652,8 @@ print("Exercise 40 is correct.")
 import math
 # Exercise 41
 # Write a function definition named area_of_circle that takes in a number representing a circle's radius and returns the area of the circl
-
+def area_of_circle(num):
+	return math.pi * (num * num)
 assert area_of_circle(3) == 28.274333882308138
 assert area_of_circle(5) == 78.53981633974483
 assert area_of_circle(7) == 153.93804002589985
@@ -654,7 +665,8 @@ print("Exercise 41 is correct.")
 import math
 # Exercise 42
 # Write a function definition named circumference that takes in a number representing a circle's radius and returns the circumference.
-
+def circumference(radius):
+	return 2 * math.pi * radius
 assert circumference(3) == 18.84955592153876
 assert circumference(5) == 31.41592653589793
 assert circumference(7) == 43.982297150257104
@@ -667,7 +679,10 @@ print("Exercise 42 is correct.")
 
 # Exercise 43
 # Write a function definition named is_vowel that takes in value and returns True if the value is a, e, i, o, u in upper or lower case.
-
+def is_vowel(letter):
+	if letter.lower() in 'aeiou':
+		return True
+	return False
 assert is_vowel("a") == True
 assert is_vowel("U") == True
 assert is_vowel("banana") == False
@@ -680,7 +695,11 @@ print("Exercise 43 is correct.")
 
 # Exercise 44
 # Write a function definition named has_vowels that takes in value and returns True if the string contains any vowels.
-
+def has_vowels(value):
+	for i in value:
+		if i in 'aeiou':
+			return True
+	return False
 assert has_vowels("banana") == True
 assert has_vowels("ubuntu") == True
 assert has_vowels("QQQQ") == False
@@ -692,6 +711,12 @@ print("Exercise 44 is correct.")
 
 # Exercise 45
 # Write a function definition named count_vowels that takes in value and returns the count of the nubmer of vowels in a sequence.
+def count_vowels(value):
+	numvowels = 0
+	for i in value:
+		if i in 'aeiou':
+			numvowels += 1
+	return numvowels
 
 assert count_vowels("banana") == 3
 assert count_vowels("ubuntu") == 3
@@ -705,7 +730,12 @@ print("Exercise 45 is correct.")
 
 # Exercise 46
 # Write a function definition named remove_vowels that takes in string and returns the string without any vowels
-
+def remove_vowels(value):
+	letters = ""
+	for letter in value:
+		if letter not in 'aeiou':
+			letters += letter
+	return letters
 assert remove_vowels("banana") == "bnn"
 assert remove_vowels("ubuntu") == "bnt"
 assert remove_vowels("mango") == "mng"
@@ -717,7 +747,10 @@ print("Exercise 46 is correct.")
 
 # Exercise 47
 # Write a function definition named starts_with_vowel that takes in string and True if the string starts with a vowel
-
+def starts_with_vowel(value):
+	if value[0] in 'aeiou' or value[0] in 'AEIOU':
+		return True
+	return False
 assert starts_with_vowel("ubuntu") == True
 assert starts_with_vowel("banana") == False
 assert starts_with_vowel("mango") == False
@@ -728,6 +761,10 @@ print("Exercise 47 is correct.")
 
 # Exercise 48
 # Write a function definition named ends_with_vowel that takes in string and True if the string ends with a vowel
+def ends_with_vowel(value):
+	if value[-1] in 'AEIOU' or value[-1] in 'aeiou':
+		return True
+	return False
 
 assert ends_with_vowel("ubuntu") == True
 assert ends_with_vowel("banana") == True
@@ -740,7 +777,10 @@ print("Exercise 48 is correct.")
 
 # Exercise 49
 # Write a function definition named starts_and_ends_with_vowel that takes in string and returns True if the string starts and ends with a vowel
-
+def starts_and_ends_with_vowel(string):
+	if string[0] in 'AaEeIiOoUu' and string[-1] in 'AaEeIiOoUu':
+		return True
+	return False
 assert starts_and_ends_with_vowel("ubuntu") == True
 assert starts_and_ends_with_vowel("banana") == False
 assert starts_and_ends_with_vowel("mango") == False
@@ -753,7 +793,8 @@ print("Exercise 49 is correct.")
 
 # Exercise 50
 # Write a function definition named first that takes in sequence and returns the first value of that sequence.
-
+def first(seq):
+	return seq[0]
 assert first("ubuntu") == "u"
 assert first([1, 2, 3]) == 1
 assert first(["python", "is", "awesome"]) == "python"
@@ -764,6 +805,8 @@ print("Exercise 50 is correct.")
 
 # Exercise 51
 # Write a function definition named second that takes in sequence and returns the second value of that sequence.
+def second(seq):
+	return seq[1]
 
 assert second("ubuntu") == "b"
 assert second([1, 2, 3]) == 2
@@ -775,7 +818,8 @@ print("Exercise 51 is correct.")
 
 # Exercise 52
 # Write a function definition named third that takes in sequence and returns the third value of that sequence.
-
+def third (seq):
+	return seq[2]
 assert third("ubuntu") == "u"
 assert third([1, 2, 3]) == 3
 assert third(["python", "is", "awesome"]) == "awesome"
@@ -786,7 +830,8 @@ print("Exercise 52 is correct.")
 
 # Exercise 53
 # Write a function definition named forth that takes in sequence and returns the forth value of that sequence.
-
+def forth(seq):
+	return seq[3]
 assert forth("ubuntu") == "n"
 assert forth([1, 2, 3, 4]) == 4
 assert forth(["python", "is", "awesome", "right?"]) == "right?"
@@ -797,6 +842,8 @@ print("Exercise 53 is correct.")
 
 # Exercise 54
 # Write a function definition named last that takes in sequence and returns the last value of that sequence.
+def last(seq):
+	return seq[-1]
 
 assert last("ubuntu") == "u"
 assert last([1, 2, 3, 4]) == 4
@@ -809,7 +856,8 @@ print("Exercise 54 is correct.")
 
 # Exercise 55
 # Write a function definition named second_to_last that takes in sequence and returns the second to last value of that sequence.
-
+def second_to_last(seq):
+	return seq[-2]
 assert second_to_last("ubuntu") == "t"
 assert second_to_last([1, 2, 3, 4]) == 3
 assert second_to_last(["python", "is", "awesome"]) == "is"
@@ -821,6 +869,8 @@ print("Exercise 55 is correct.")
 
 # Exercise 56
 # Write a function definition named third_to_last that takes in sequence and returns the third to last value of that sequence.
+def third_to_last(seq):
+	return seq[-3]
 
 assert third_to_last("ubuntu") == "n"
 assert third_to_last([1, 2, 3, 4]) == 2
@@ -833,6 +883,8 @@ print("Exercise 56 is correct.")
 
 # Exercise 57
 # Write a function definition named first_and_second that takes in sequence and returns the first and second value of that sequence as a list
+def first_and_second(seq):
+	return seq[0:2]
 
 assert first_and_second([1, 2, 3, 4]) == [1, 2]
 assert first_and_second(["python", "is", "awesome"]) == ["python", "is"]
@@ -844,6 +896,8 @@ print("Exercise 57 is correct.")
 
 # Exercise 58
 # Write a function definition named first_and_last that takes in sequence and returns the first and last value of that sequence as a list
+def first_and_last(seq):
+	return [seq[0],seq[-1]]
 
 assert first_and_last([1, 2, 3, 4]) == [1, 4]
 assert first_and_last(["python", "is", "awesome"]) == ["python", "awesome"]
@@ -855,6 +909,8 @@ print("Exercise 58 is correct.")
 
 # Exercise 59
 # Write a function definition named first_to_last that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
+def first_to_last(seq):
+	return seq[1:] + [seq[0]]
 
 assert first_to_last([1, 2, 3, 4]) == [2, 3, 4, 1]
 assert first_to_last(["python", "is", "awesome"]) == ["is", "awesome", "python"]
@@ -868,6 +924,8 @@ print("Exercise 59 is correct.")
 
 # Exercise 60
 # Write a function definition named sum_all that takes in sequence of numbers and returns all the numbers added together.
+def sum_all(seq):
+	return sum(seq)
 
 assert sum_all([1, 2, 3, 4]) == 10
 assert sum_all([3, 3, 3]) == 9
@@ -879,6 +937,8 @@ print("Exercise 60 is correct.")
 
 # Exercise 61
 # Write a function definition named mean that takes in sequence of numbers and returns the average value
+def mean(seq):
+	return sum(seq)/len(seq)
 
 assert mean([1, 2, 3, 4]) == 2.5
 assert mean([3, 3, 3]) == 3
@@ -890,6 +950,16 @@ print("Exercise 61 is correct.")
 
 # Exercise 62
 # Write a function definition named median that takes in sequence of numbers and returns the average value
+def median(seq):
+	n = len(seq)
+	seq.sort()
+	if n %2 == 0:
+		median1 = seq[n//2]
+		median2 = seq[n//2-1]
+		med = (median1+median2)/2
+	else:
+		med = seq[n//2]
+	return med
 
 assert median([1, 2, 3, 4, 5]) == 3.0
 assert median([1, 2, 3]) == 2.0
@@ -902,6 +972,8 @@ print("Exercise 62 is correct.")
 
 # Exercise 63
 # Write a function definition named mode that takes in sequence of numbers and returns the most commonly occuring value
+def mode(seq):
+	return max (set(seq), key = seq.count)
 
 assert mode([1, 2, 2, 3, 4]) == 2
 assert mode([1, 1, 2, 3]) == 1
@@ -913,7 +985,11 @@ print("Exercise 63 is correct.")
 
 # Exercise 64
 # Write a function definition named product_of_all that takes in sequence of numbers and returns the product of multiplying all the numbers together
-
+def product_of_all(seq):
+	p = 1
+	for i in seq:
+		p *= i
+	return p
 assert product_of_all([1, 2, 3]) == 6
 assert product_of_all([3, 4, 5]) == 60
 assert product_of_all([2, 2, 3, 0]) == 0
@@ -932,6 +1008,12 @@ numbers = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
 
 # Exercise 65
 # Write a function definition named get_highest_number that takes in sequence of numbers and returns the largest number.
+def get_highest_number(seq):
+	hn = 0
+	for i in seq:
+		if i > hn:
+			hn = i
+	return hn
 
 assert get_highest_number([1, 2, 3]) == 3
 assert get_highest_number([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == 5
@@ -943,7 +1025,13 @@ print("Exercise 65 is correct.")
 
 # Exercise 66
 # Write a function definition named get_smallest_number that takes in sequence of numbers and returns the smallest number.
-
+####
+def get_smallest_number(seq):
+	min = 100
+	for i in seq:
+		if i < min:
+			min = i
+	return min
 assert get_smallest_number([1, 2, 3]) == 1
 assert get_smallest_number([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == -5
 assert get_smallest_number([-4, -3, 1]) == -4
@@ -954,7 +1042,12 @@ print("Exercise 66 is correct.")
 
 # Exercise 67
 # Write a function definition named only_odd_numbers that takes in sequence of numbers and returns the odd numbers in a list.
-
+def only_odd_numbers(seq):
+	final = []
+	for i in seq:
+		if not i % 2 == 0:
+			final.append(i)
+	return final
 assert only_odd_numbers([1, 2, 3]) == [1, 3]
 assert only_odd_numbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [-5, -3, -1, 1, 3, 5]
 assert only_odd_numbers([-4, -3, 1]) == [-3, 1]
@@ -965,7 +1058,12 @@ print("Exercise 67 is correct.")
 
 # Exercise 68
 # Write a function definition named only_even_numbers that takes in sequence of numbers and returns the even numbers in a list.
-
+def only_even_numbers(seq):
+	final = []
+	for i in seq:
+		if i % 2 == 0:
+			final.append(i)
+	return final
 assert only_even_numbers([1, 2, 3]) == [2]
 assert only_even_numbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [-4, -2, 2, 4]
 assert only_even_numbers([-4, -3, 1]) == [-4]
@@ -976,7 +1074,12 @@ print("Exercise 68 is correct.")
 
 # Exercise 69
 # Write a function definition named only_positive_numbers that takes in sequence of numbers and returns the positive numbers in a list.
-
+def only_positive_numbers(seq):
+	final = []
+	for i in seq:
+		if i > 0:
+			final.append(i)
+	return final
 assert only_positive_numbers([1, 2, 3]) == [1, 2, 3]
 assert only_positive_numbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
 assert only_positive_numbers([-4, -3, 1]) == [1]
@@ -987,7 +1090,12 @@ print("Exercise 69 is correct.")
 
 # Exercise 70
 # Write a function definition named only_negative_numbers that takes in sequence of numbers and returns the negative numbers in a list.
-
+def only_negative_numbers(seq):
+	final = []
+	for i in seq:
+		if i < 0:
+			final.append(i)
+	return final
 assert only_negative_numbers([1, 2, 3]) == []
 assert only_negative_numbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]) == [-5, -4, -3, -2, -1]
 assert only_negative_numbers([-4, -3, 1]) == [-4, -3]
@@ -998,7 +1106,11 @@ print("Exercise 70 is correct.")
 
 # Exercise 71
 # Write a function definition named has_evens that takes in sequence of numbers and returns True if there are any even numbers in the sequence
-
+def has_evens(seq):
+	for i in seq:
+		if i % 2 == 0:
+			return True
+	return False
 assert has_evens([1, 2, 3]) == True
 assert has_evens([2, 5, 6]) == True
 assert has_evens([3, 3, 3]) == False
@@ -1010,6 +1122,12 @@ print("Exercise 71 is correct.")
 
 # Exercise 72
 # Write a function definition named count_evens that takes in sequence of numbers and returns the number of even numbers
+def count_evens(seq):
+	count = 0
+	for i in seq:
+		if i % 2 == 0:
+			count += 1
+	return count
 
 assert count_evens([1, 2, 3]) == 1
 assert count_evens([2, 5, 6]) == 2
@@ -1022,6 +1140,11 @@ print("Exercise 72 is correct.")
 
 # Exercise 73
 # Write a function definition named has_odds that takes in sequence of numbers and returns True if there are any odd numbers in the sequence
+def has_odds(seq):
+	for i in seq:
+		if not i % 2 == 0:
+			return True
+	return False
 
 assert has_odds([1, 2, 3]) == True
 assert has_odds([2, 5, 6]) == True
@@ -1034,7 +1157,12 @@ print("Exercise 73 is correct.")
 
 # Exercise 74
 # Write a function definition named count_odds that takes in sequence of numbers and returns True if there are any odd numbers in the sequence
-
+def count_odds(seq):
+	count = 0
+	for i in seq:
+		if not i % 2 == 0:
+			count += 1
+	return count
 assert count_odds([1, 2, 3]) == 2
 assert count_odds([2, 5, 6]) == 1
 assert count_odds([3, 3, 3]) == 3
@@ -1046,7 +1174,12 @@ print("Exercise 74 is correct.")
 
 # Exercise 75
 # Write a function definition named count_negatives that takes in sequence of numbers and returns a count of the number of negative numbers
-
+def count_negatives(seq):
+	count = 0
+	for i in seq:
+		if i < 0:
+			count += 1
+	return count
 assert count_negatives([1, -2, 3]) == 1
 assert count_negatives([2, -5, -6]) == 2
 assert count_negatives([3, 3, 3]) == 0
@@ -1057,6 +1190,12 @@ print("Exercise 75 is correct.")
 
 # Exercise 76
 # Write a function definition named count_positives that takes in sequence of numbers and returns a count of the number of positive numbers
+def count_positives(seq):
+	count = 0
+	for i in seq:
+		if i > 0:
+			count += 1
+	return count
 
 assert count_positives([1, -2, 3]) == 2
 assert count_positives([2, -5, -6]) == 1
@@ -1069,6 +1208,12 @@ print("Exercise 76 is correct.")
 
 # Exercise 77
 # Write a function definition named only_positive_evens that takes in sequence of numbers and returns a list containing all the positive evens from the sequence
+def only_positive_evens(seq):
+	final = []
+	for i in seq:
+		if i > 0 and i % 2 == 0:
+			final.append(i)
+	return final
 
 assert only_positive_evens([1, -2, 3]) == []
 assert only_positive_evens([2, -5, -6]) == [2]
@@ -1081,7 +1226,12 @@ print("Exercise 77 is correct.")
 
 # Exercise 78
 # Write a function definition named only_positive_odds that takes in sequence of numbers and returns a list containing all the positive odd numbers from the sequence
-
+def only_positive_odds(seq):
+	final = []
+	for i in seq:
+		if i > 0 and not i % 2 ==0:
+			final.append(i)
+	return final
 assert only_positive_odds([1, -2, 3]) == [1, 3]
 assert only_positive_odds([2, -5, -6]) == []
 assert only_positive_odds([3, 3, 4, 6]) == [3, 3]
@@ -1093,7 +1243,12 @@ print("Exercise 78 is correct.")
 
 # Exercise 79
 # Write a function definition named only_negative_evens that takes in sequence of numbers and returns a list containing all the negative even numbers from the sequence
-
+def only_negative_evens(seq):
+	final=[]
+	for i in seq:
+		if i < 0 and i % 2 == 0:
+			final.append(i)
+	return final
 assert only_negative_evens([1, -2, 3]) == [-2]
 assert only_negative_evens([2, -5, -6]) == [-6]
 assert only_negative_evens([3, 3, 4, 6]) == []
@@ -1105,7 +1260,12 @@ print("Exercise 79 is correct.")
 
 # Exercise 80
 # Write a function definition named only_negative_odds that takes in sequence of numbers and returns a list containing all the negative odd numbers from the sequence
-
+def only_negative_odds(seq):
+	final=[]
+	for i in seq:
+		if i < 0 and not i % 2 == 0:
+			final.append(i)
+	return final
 assert only_negative_odds([1, -2, 3]) == []
 assert only_negative_odds([2, -5, -6]) == [-5]
 assert only_negative_odds([3, 3, 4, 6]) == []
@@ -1117,7 +1277,8 @@ print("Exercise 80 is correct.")
 
 # Exercise 81
 # Write a function definition named shortest_string that takes in a list of strings and returns the shortest string in the list.
-
+def shortest_string(seq):
+	return min(seq, key = len)
 assert shortest_string(["kiwi", "mango", "strawberry"]) == "kiwi"
 assert shortest_string(["hello", "everybody"]) == "hello"
 assert shortest_string(["mary", "had", "a", "little", "lamb"]) == "a"
@@ -1128,7 +1289,8 @@ print("Exercise 81 is correct.")
 
 # Exercise 82
 # Write a function definition named longest_string that takes in sequence of strings and returns the longest string in the list.
-
+def longest_string(seq):
+	return max(seq, key=len)
 assert longest_string(["kiwi", "mango", "strawberry"]) == "strawberry"
 assert longest_string(["hello", "everybody"]) == "everybody"
 assert longest_string(["mary", "had", "a", "little", "lamb"]) == "little"
@@ -1149,6 +1311,8 @@ print(set([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
 
 # Exercise 83
 # Write a function definition named get_unique_values that takes in a list and returns a set with only the unique values from that list.
+def get_unique_values(lst):
+	return set(lst)
 
 assert get_unique_values(["ant", "ant", "mosquito", "mosquito", "ladybug"]) == {"ant", "mosquito", "ladybug"}
 assert get_unique_values(["b", "a", "n", "a", "n", "a", "s"]) == {"b", "a", "n", "s"}
@@ -1160,7 +1324,9 @@ print("Exercise 83 is correct.")
 
 # Exercise 84
 # Write a function definition named get_unique_values_from_two_lists that takes two lists and returns a single set with only the unique values
-
+def get_unique_values_from_two_lists(lst1,lst2):
+	both = lst1 + lst2
+	return set(both)
 assert get_unique_values_from_two_lists([5, 1, 2, 3], [3, 4, 5, 5]) == {1, 2, 3, 4, 5}
 assert get_unique_values_from_two_lists([1, 1], [2, 2, 3]) == {1, 2, 3}
 assert get_unique_values_from_two_lists(["tomato", "mango", "kiwi"], ["eggplant", "tomato", "broccoli"]) == {"tomato", "mango", "kiwi", "eggplant", "broccoli"}
@@ -1171,6 +1337,10 @@ print("Exercise 84 is correct.")
 
 # Exercise 85
 # Write a function definition named get_values_in_common that takes two lists and returns a single set with the values that each list has in common
+def get_values_in_common(l1,l2):
+	set1 = set(l1)
+	set2 = set(l2)
+	return set1.intersection(set2)
 
 assert get_values_in_common([5, 1, 2, 3], [3, 4, 5, 5]) == {3, 5}
 assert get_values_in_common([1, 2], [2, 2, 3]) == {2}
@@ -1182,6 +1352,8 @@ print("Exercise 85 is correct.")
 
 # Exercise 86
 # Write a function definition named get_values_not_in_common that takes two lists and returns a single set with the values that each list does not have in common
+def get_values_not_in_common(l1,l2):
+	return set(l1) ^ set(l2)
 
 assert get_values_not_in_common([5, 1, 2, 3], [3, 4, 5, 5]) == {1, 2, 4}
 assert get_values_not_in_common([1, 1], [2, 2, 3]) == {1, 2, 3}
@@ -1214,7 +1386,8 @@ thomas_paper = {
 
 # Exercise 87
 # Write a function named get_paper_title that takes in a dictionary and returns the title property
-
+def get_paper_title(d):
+	return d['title']
 assert get_paper_title(tukey_paper) == "The Future of Data Analysis"
 assert get_paper_title(thomas_paper) == "A mathematical model of glutathione metabolism"
 print("Exercise 87 is correct.")
@@ -1224,6 +1397,8 @@ print("Exercise 87 is correct.")
 
 # Exercise 88
 # Write a function named get_year_published that takes in a dictionary and returns the value behind the "year_published" key.
+def get_year_published(d):
+	return d['year_published']
 
 assert get_year_published(tukey_paper) == 1962
 assert get_year_published(thomas_paper) == 2008
@@ -1244,7 +1419,8 @@ book = {
 
 # Exercise 89
 # Write a function named get_price that takes in a dictionary and returns the price
-
+def get_price(d):
+	return d['price']
 assert get_price(book) == 36.99
 print("Exercise 89 is complete.")
 
@@ -1253,7 +1429,8 @@ print("Exercise 89 is complete.")
 
 # Exercise 90
 # Write a function named get_book_author that takes in a dictionary (the above declared book variable) and returns the author's name
-
+def get_book_author(d):
+	return d['author']
 
 assert get_book_author(book) == "Frances Buontempo"
 print("Exercise 90 is complete.")
@@ -1293,7 +1470,8 @@ books = [
 
 # Exercise 91
 # Write a function named get_number_of_books that takes in a list of objects and returns the number of dictionaries in that list.
-
+def get_number_of_books(l):
+	return len(l)
 assert get_number_of_books(books) == 4
 print("Exercise 91 is complete.")
 
